@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraveBite - Delicious Food Delivered Fast</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-utensils"></i> Crave<span>Bite</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="cart-icon" id="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-badge" id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Satisfy Your Cravings <br> in <span>Minutes</span></h1>
+            <p>Experience the best local flavors delivered hot and fresh directly to your doorstep. Explore our curated
+                menu today.</p>
+            <a href="#menu" class="btn btn-primary">Order Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop"
+                alt="Delicious Food">
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="section-title">
+            <h2>Our Top Rated <span>Menu</span></h2>
+            <p>Freshly prepared ingredients with a touch of culinary magic.</p>
+        </div>
+
+        <!-- Categories -->
+        <div class="menu-categories" id="menu-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="burger">Burgers</button>
+            <button class="category-btn" data-category="pizza">Pizza</button>
+            <button class="category-btn" data-category="asian">Asian</button>
+            <button class="category-btn" data-category="dessert">Dessert</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-grid" id="menu-grid">
+            <!-- Menu items injected dynamically by JS -->
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <i class="fa-solid fa-xmark close-cart" id="close-cart"></i>
+            </div>
+
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items injected here -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹000</span>
+                </div>
+                <button class="btn btn-primary checkout-btn" id="proceed-checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <i class="fa-solid fa-xmark close-modal" id="close-modal"></i>
+            </div>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" rows="3" required placeholder="123 Main St, City, Country"></textarea>
+                </div>
+                <div class="form-group payment-mock">
+                    <label>Payment Method</label>
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" value="card" checked> Credit/Debit Card</label>
+                        <label><input type="radio" name="payment" value="cod"> Cash on Delivery</label>
+                    </div>
+                </div>
+                <!-- Loading State & Error message -->
+                <div id="checkout-msg" class="checkout-msg"></div>
+                <button type="submit" class="btn btn-primary w-100" id="submit-order-btn">Place Order - <span
+                        id="checkout-final-total">₹000</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-utensils"></i> Crave<span>Bite</span>
+            </div>
+            <p>&copy; 2026 CraveBite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
